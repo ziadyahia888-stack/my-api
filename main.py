@@ -1,16 +1,8 @@
 from datetime import datetime, timezone
-from pathlib import Path
 
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
 
 app = FastAPI()
-BASE_DIR = Path(__file__).parent
-
-
-@app.get("/")
-def home():
-    return FileResponse(BASE_DIR / "index.html")
 
 
 @app.get("/api/status")
